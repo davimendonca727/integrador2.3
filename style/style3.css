@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f1fdf4;
+    color: #000000;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: #1732ac;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+ 
+  
+  h1, h2 {
+    margin-bottom: 15px;
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  ul {
+    list-style: disc inside;
+    padding-left: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #094196;
+    color: white;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      padding: 15px;
+    }
+    header h1 {
+      font-size: 1.6em;
+    }
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* proporção 16:9 */
+    overflow: hidden;
+  }
+  
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche o container mantendo proporção */
+  }
+  
+  header {
+    background: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Container centralizado igual à imagem */
+  .header-container {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Logo */
+  .logo {
+    height: 200px;
+    width: auto;
+  }
+  
+  /* Nav padrão em telas grandes */
+  .nav-menu {
+    background-color: rgba(0, 52, 148, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  .nav-menu a {
+    margin: 5px 10px;
+    text-decoration: none;
+    color: #e4ffe6;
+    font-weight: bold;
+    transition: transform 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    transform: translateY(-4px);
+  }
+  .imagem-responsiva {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  
+  .video-responsivo {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;         /* opcional */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* opcional */
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin: 0;
+  }

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redução do Consumo de Papel com Digitalização</title>
+
+  <link rel="icon" href="favicons/papel.png" type="image/x-icon">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f5f9;
+      color: #1a237e;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+main h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+
+
+    header {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 0 0 10px 10px;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto 60px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(57, 73, 171, 0.3);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      color: #3949ab;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    section p, section ul {
+      font-size: 1em;
+      color: #212121;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: #283593;
+    }
+
+    /* Botão de simulação */
+    #simularConsumoBtn {
+      display: inline-block;
+      background-color: #283593;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+      user-select: none;
+    }
+
+    #simularConsumoBtn:hover {
+      background-color: #1a237e;
+    }
+
+    /* Área do gráfico */
+    #graficoConsumo {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #3949ab;
+      border-radius: 8px;
+      background-color: #e8eaf6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #c5cae9;
+      color: #1a237e;
+      font-size: 0.9em;
+      margin-top: 40px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section h2 {
+        font-size: 1.3em;
+      }
+
+      #simularConsumoBtn {
+        width: 100%;
+      }
+    }
+    .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* proporção 16:9 */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Preenche o container mantendo proporção */
+}
+
+header {
+  background: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Container centralizado igual à imagem */
+.header-container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo */
+.logo {
+  height: 200px;
+  width: auto;
+}
+
+/* Nav padrão em telas grandes */
+.nav-menu {
+  background-color: rgba(0, 66, 141, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.nav-menu a {
+  margin: 5px 10px;
+  text-decoration: none;
+  color: #e4ffe6;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.nav-menu a:hover {
+  transform: translateY(-4px);
+}
+.imagem-responsiva {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.video-responsivo {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;         /* opcional */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* opcional */
+}
+
+
+
+  
+h3{
+      color: #0029b1cc;
+    }
+
+  
+
+  </style>
+</head>
+
+
+<header>
+  <div class="header-container">
+    <img src="img/pad.png" alt="Logo do site" class="logo">
+    <nav class="nav-menu">
+      <a href="index.html">Preservação</a>
+      <a href="tecnologiaambiental.html">Tecnologia</a>
+      <a href="impactosanbientais.html">Impactos</a>
+      <a href="papel.html">Consumo de Papel</a>
+      <a href="consumo.html">Energia Digital</a>
+      <a href="descarte.html">Descarte Eletrônico</a>
+      <a href="educação.html">Educação Ambiental</a>
+    </nav>
+  </div>
+</header>
+
+<img src="TECNOLOGIA E/papel.png" alt="Banner Preservação Ambiental Digital" class="imagem-responsiva">
+
+ <center>
+<h1>Redução do Consumo de Papel com Digitalização</h1>
+    <h4>Como a tecnologia ajuda a preservar árvores e economizar recursos naturais</h4>
+  </header>
+
+</center>
+<body>
+ 
+    
+    
+
+  <main>
+    <section>
+      <h2>
+    📄 O Que É a Digitalização?</h2>
+    <p>A digitalização é o processo de transformar documentos físicos — como papéis, livros, formulários e arquivos impressos — em versões digitais acessíveis por meio de computadores, 
+tablets e celulares. Ao digitalizar, informações antes restritas ao papel passam a ser armazenadas na nuvem ou em sistemas eletrônicos, permitindo fácil acesso, organização e 
+compartilhamento.
+
+Essa prática tem ganhado força não apenas por sua praticidade, mas também por seu impacto positivo na sustentabilidade ambiental, reduzindo a dependência de recursos naturais como
+ madeira, água e energia.</p>
+</section>
+ <img src="img/digitalizacao.webp" alt="Imagem Demonstrativa" class="imagem-responsiva">
+
+ <section>
+<h2> Por Que É Importante Reduzir o Consumo de Papel?</h2>
+<p>O uso excessivo de papel tem consequências ambientais sérias e muitas vezes invisíveis no cotidiano. Produzir uma única folha de papel pode consumir até 10 litros de água e liberar emissões de carbono no processo de fabricação. Além disso:
+
+A indústria de papel é uma das principais responsáveis pelo desmatamento de florestas nativas;
+
+O processo de branqueamento e tratamento do papel utiliza produtos químicos que podem poluir rios e solos;
+
+Resíduos de papel muitas vezes não são reciclados adequadamente, aumentando o volume de lixo sólido nas cidades.
+
+Reduzir o consumo de papel é, portanto, uma atitude urgente para proteger os ecossistemas naturais, conservar a biodiversidade e mitigar os impactos das mudanças climáticas.</p>
+</section>
+
+<section>
+<h2>✅ Benefícios da Digitalização</h2>
+<p>Adotar soluções digitais traz uma série de vantagens tanto para o meio ambiente quanto para a eficiência de empresas, escolas e até da rotina pessoal. Entre os principais benefícios estão:
+<ul>
+  <li>🌲 Preservação de florestas e redução do desmatamento; </li>
+
+    <li>💾 Maior organização de arquivos e dados, com busca rápida e categorização inteligente;</li>
+
+      <li>🚫 Eliminação da necessidade de espaços físicos para arquivamento, como armários e prateleiras;</li>
+
+        <li>⏱️ Agilidade no acesso a informações, de qualquer lugar e a qualquer momento;</li>
+
+          <li>💸 Redução de custos operacionais, como impressão, tinta, papel e transporte de documentos;</li>
+
+            <li>🔒 Segurança e backup automático de arquivos, protegendo contra perdas e danos.</li><br>
+          
+              <h1> Como Começar a Digitalizar?<br><br></h1>
+<h3>A digitalização pode ser implementada de forma simples e gradual, tanto por pessoas quanto por instituições públicas ou privadas. Aqui estão alguns passos práticos:</h3>
+
+<b><p>Escolha documentos prioritários: digitalize arquivos importantes, como contratos, certidões, documentos fiscais e históricos escolares.</p>
+
+<p>Use ferramentas digitais: aplicativos como Google Drive, OneDrive, Evernote ou softwares de gestão documental permitem digitalizar, armazenar e organizar arquivos de forma 
+  segura.</p>
+
+<p>Adote assinaturas eletrônicas: contratos e documentos legais podem ser validados digitalmente, eliminando a necessidade de impressão.</p>
+
+<p>Estimule o uso de plataformas digitais: em escolas, empresas e repartições públicas, incentive o uso de ambientes virtuais para comunicação e arquivamento.</p></b>
+</li>
+</ul>
+</p>
+</section>
+
+<img src="img/assinaturaeletro.jpg" alt="Imagem Demonstrativa" class="imagem-responsiva">
+
+<section>
+<h2>💡 Dicas Práticas para Reduzir o Uso de Papel</h2>
+<p>Mesmo sem eliminar totalmente o papel, é possível adotar hábitos mais sustentáveis no dia a dia:
+  <ul>
+
+    <li>✅ Utilize aplicativos de anotações como Notion, OneNote ou Keep; </li>
+
+    <li>✅ Leia livros, revistas e artigos em formato digital (PDF, ePub); </li>
+
+    <li>✅ Evite imprimir documentos que podem ser visualizados em tela; </li>
+
+    <li>✅ Estimule reuniões e apresentações sem materiais impressos; </li>
+
+    <li>✅ Reutilize folhas já impressas como rascunho ou para treinamentos.</p> </li>
+  </ul>
+</section>
+
+<section>
+<h2> O Papel da Educação e da Conscientização</h2>
+<p>A transição para uma cultura digital mais sustentável depende de informação e sensibilização. É fundamental que:
+
+Escolas incorporem temas como educação ambiental digital e tecnologia sustentável no currículo;
+
+Empresas invistam em treinamentos sobre redução de desperdícios e consumo consciente;
+
+A sociedade reconheça que a preservação ambiental começa com pequenas atitudes cotidianas.
+
+Campanhas de conscientização podem estimular mudanças comportamentais duradouras e preparar novas gerações para um futuro mais verde.</p>
+
+</section>
+<section>
+Conclusão: Digitalizar é Cuidar do Planeta
+<p>A digitalização vai muito além da praticidade — trata-se de uma estratégia eficaz para reduzir o impacto ambiental do consumo de papel. Ao transformar hábitos, adotar ferramentas 
+  tecnológicas e repensar o modo
+   como lidamos com documentos, damos um passo importante rumo à sustentabilidade e à preservação do meio ambiente.</p>
+
+<h1>Com pequenas mudanças, podemos causar grandes impactos positivos.</h1>
+<img src="img/papel.jpg" alt="Imagem Demonstrativa" class="imagem-responsiva">
+
+
+
+</section>
+
+    <section>
+      <h2>Simular Consumo de Papel</h2>
+      <p>Clique no botão abaixo para ter uma ideia de quantas árvores podem ser preservadas ao reduzir o consumo de papel.</p>
+      <button id="simularConsumoBtn">Simular Economia de Papel</button>
+      <svg id="graficoConsumo" width="100%" height="250" viewBox="0 0 600 250" aria-label="Gráfico da economia de papel com digitalização" role="img" >
+        <!-- Fundo do gráfico -->
+        <rect x="50" y="20" width="500" height="200" fill="#c5cae9" />
+        
+        <!-- Barras -->
+        <rect x="90" y="180" width="60" height="40" fill="#3949ab" />
+        <rect x="190" y="140" width="60" height="80" fill="#5c6bc0" />
+        <rect x="290" y="110" width="60" height="110" fill="#7986cb" />
+        <rect x="390" y="80" width="60" height="140" fill="#9fa8da" />
+        <rect x="490" y="130" width="60" height="90" fill="#657ecfcc" />
+        
+        <!-- Labels -->
+        <text x="120" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Escolas</text>
+        <text x="220" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Empresas</text>
+        <text x="320" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Governo</text>
+        <text x="420" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Pessoas</text>
+        <text x="520" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Média</text>
+      </svg>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Economia de Papel Digital | Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    document.getElementById('simularConsumoBtn').addEventListener('click', function() {
+      alert(
+        'Simulação rápida:\n\n' +
+        '- Digitalizar 1000 páginas pode salvar cerca de 17 árvores.\n' +
+        '- Reduzir a impressão em 50% contribui para economizar milhares de litros de água.\n' +
+        '- Adoção da digitalização em escolas e empresas diminui custos e protege o meio ambiente.\n\n' +
+        'Comece hoje mesmo a digitalizar e economizar papel!'
+      );
+    });
+  </script>
+</body>
+</html>

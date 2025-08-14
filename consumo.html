@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consumo de Energia dos Sistemas Digitais</title>
+
+  <link rel="icon" href="favicons/consumodigital.png" type="image/x-icon">
+  <style>
+
+    
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f5f9;
+      color: #000000;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #fdfffd;
+      color: #000000;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 0 0 10px 10px;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto 60px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(82, 82, 158, 0.3);
+    }
+    h3 {
+      color: #000000;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      color: #007700;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    section p, section ul {
+      font-size: 1em;
+      color: #212121;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: #038803;
+    }
+
+    /* Botão de simulação */
+    #simularConsumoBtn {
+      display: inline-block;
+      background-color: #268613;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+      user-select: none;
+    }
+
+    #simularConsumoBtn:hover {
+      background-color: #11992e;
+    }
+
+    /* Área do gráfico */
+    #graficoConsumo {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #138618;
+      border-radius: 8px;
+      background-color: #ffffff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000000;
+      color: #f7fff7;
+      font-size: 0.9em;
+      margin-top: 40px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section h2 {
+        font-size: 1.3em;
+      }
+
+      #simularConsumoBtn {
+        width: 100%;
+      }
+    }
+
+    .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* proporção 16:9 */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Preenche o container mantendo proporção */
+}
+
+header {
+  background: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Container centralizado igual à imagem */
+.header-container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo */
+.logo {
+  height: 200px;
+  width: auto;
+}
+
+/* Nav padrão em telas grandes */
+.nav-menu {
+  background-color: rgba(0, 122, 20, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.nav-menu a {
+  margin: 5px 10px;
+  text-decoration: none;
+  color: #e4ffe6;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.nav-menu a:hover {
+  transform: translateY(-4px);
+}
+.imagem-responsiva {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.video-responsivo {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;         /* opcional */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* opcional */
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="img/pad.png" alt="Logo do site" class="logo">
+      <nav class="nav-menu">
+        <a href="index.html">Preservação</a>
+        <a href="tecnologiaambiental.html">Tecnologia</a>
+        <a href="impactosanbientais.html">Impactos</a>
+        <a href="papel.html">Consumo de Papel</a>
+        <a href="consumo.html">Energia Digital</a>
+        <a href="descarte.html">Descarte Eletrônico</a>
+        <a href="educação.html">Educação Ambiental</a>
+      </nav>
+    </div>
+  </header>
+
+  <img src="TECNOLOGIA E/TECNOLOGIA E.png" alt="Banner Preservação Ambiental Digital" class="imagem-responsiva">
+
+<center>
+  <h1> O Que é o Consumo Digital de Energia?</h1>
+</center>
+  
+  <main>
+    <section>
+      
+<p>O consumo digital de energia refere-se à quantidade de eletricidade utilizada para alimentar dispositivos eletrônicos (como computadores, smartphones e TVs), redes de internet,
+ data centers e serviços em nuvem. Com a crescente digitalização da sociedade, esse consumo tem se tornado uma parcela significativa da demanda energética mundial.</p>
+
+<p>Esse tipo de consumo, muitas vezes invisível aos olhos do usuário comum, envolve uma complexa infraestrutura que opera ininterruptamente para manter plataformas digitais, streaming de vídeo, redes sociais,
+ e armazenamento de dados funcionando 24 horas por dia.</p>
+
+ <img src="img/consumodigital.jpg" alt="Imagem Demonstrativa" class="imagem-responsiva">
+
+<h2> Números Alarmantes</h2>
+<p>De acordo com estimativas recentes, os sistemas digitais já são responsáveis por aproximadamente 4% das emissões globais de dióxido de carbono (CO₂). Se nenhuma medida for adotada, esse número poderá
+   dobrar até 2030, ultrapassando as emissões de setores tradicionalmente poluentes, como a aviação civil.
+
+A digitalização, apesar de promover avanços em diversos setores, também traz um impacto ambiental considerável, especialmente quando não acompanhada de práticas sustentáveis.</p>
+</section>
+
+<section>
+<h2> Fontes de Maior Consumo de Energia Digital</h2>
+<p>As principais fontes de elevado consumo energético digital incluem:
+
+Plataformas de streaming de vídeo e música (como YouTube, Netflix e Spotify);
+
+Mineração de criptomoedas, que requer computadores especializados operando em tempo integral;
+
+Redes sociais, que processam grandes volumes de dados em tempo real;
+
+Armazenamento em nuvem e data centers, que precisam de energia constante não apenas para processar, mas também para resfriar os equipamentos.
+
+Esses sistemas operam em larga escala e demandam estruturas de climatização, segurança de dados e redundância energética, o que agrava o impacto ambiental.</p></section>
+
+
+<section>
+<h2> Uso Consciente e Sustentável</h2>
+<h3>É possível reduzir significativamente o impacto ambiental da tecnologia com pequenas mudanças de hábito. Algumas práticas sustentáveis incluem:</h3>
+
+<p>Apagar arquivos e e-mails desnecessários, liberando espaço nos servidores;</p>
+
+<p>Evitar o uso prolongado e sem propósito de redes sociais e plataformas de vídeo;</p>
+
+<p>Desligar dispositivos que não estão em uso, evitando o modo "standby", que também consome energia;</p>
+
+<p>Preferir plataformas mais eficientes e leves, que consomem menos recursos para carregar e transmitir dados.</p>
+</section>
+
+<img src="img/sustentável.jpg" alt="Imagem Demonstrativa" class="imagem-responsiva">
+
+<section>
+<h2> Como Reduzir o Gasto Energético no Dia a Dia?</h2>
+<h3>Adotar boas práticas no uso de aparelhos eletrônicos pode fazer grande diferença. Algumas dicas:</h3>
+
+<p>Ativar o modo de economia de energia em computadores, notebooks e celulares;</p>
+
+<p>Fechar abas, janelas e aplicativos que não estão sendo utilizados;</p>
+
+<p>Desligar o roteador Wi-Fi e equipamentos eletrônicos da tomada ao sair de casa;</p>
+
+<p>Utilizar navegadores leves e aplicativos otimizados para menor uso de dados e energia.</p>
+
+<h2> Conscientização e Investimento em Tecnologia Verde</h2>
+<p>Diversas empresas de tecnologia vêm investindo em energias renováveis (como solar e eólica) para abastecer seus data centers, além de desenvolverem servidores mais eficientes. Iniciativas como a 
+neutralização de carbono digital, por meio do reflorestamento e compensação ambiental, também estão em crescimento.
+
+Contudo, a responsabilidade não é apenas das grandes corporações: o engajamento dos usuários é fundamental. A mudança começa com cada pessoa adotando hábitos mais conscientes no ambiente digital.</p>
+
+</section>
+
+<section>
+
+<h2> Conclusão</h2>
+<p>O consumo de energia digital representa uma ameaça silenciosa e crescente ao meio ambiente. Apesar de não emitir fumaça ou deixar resíduos visíveis, ele contribui significativamente para o aquecimento global
+ e o esgotamento de recursos naturais.
+
+Entretanto, com educação ambiental, conscientização e pequenas mudanças de comportamento, é possível reduzir esse impacto e promover uma relação mais sustentável com a tecnologia. O futuro depende das escolhas 
+que fazemos hoje, inclusive no mundo virtual.</p>
+</section>
+
+<img src="img/virtual.avif"   alt="Imagem Demonstrativ" class="imagem-responsiva"><br><br><br>
+      
+
+    <section>
+      
+      <p>Clique no botão abaixo para ter uma ideia do consumo médio de energia baseado no uso diário dos seus dispositivos.</p>
+      <button id="simularConsumoBtn">Simular Consumo Digital Pessoal</button>
+      <svg id="graficoConsumo" width="100%" height="250" viewBox="0 0 600 250" aria-label="Gráfico do consumo de energia dos sistemas digitais" role="img" >
+        <!-- Fundo do gráfico -->
+        <rect x="50" y="20" width="500" height="200" fill="#00ff1149" />
+        
+        <!-- Barras -->
+        <rect x="90" y="180" width="60" height="40" fill=" #00e2005e" />
+        <rect x="190" y="140" width="60" height="80" fill="#00af17a4" />
+        <rect x="290" y="110" width="60" height="110" fill="#00bd1f8e" />
+        <rect x="390" y="80" width="60" height="140" fill="#00d32380" />
+        <rect x="490" y="130" width="60" height="90" fill="#00e2005e" />
+        
+        
+        <!-- Labels -->
+        <text x="120" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Streaming</text>
+        <text x="220" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Data Centers</text>
+        <text x="320" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Criptomoedas</text>
+        <text x="420" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Redes Sociais</text>
+        <text x="520" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Outros</text>
+      </svg>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Energia Digital Sustentável | Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    document.getElementById('simularConsumoBtn').addEventListener('click', function() {
+      alert(
+        'Simulação rápida:\n\n' +
+        '- 2 horas de streaming consomem cerca de 1,8 kWh.\n' +
+        '- Uso de redes sociais por 3 horas: 0,5 kWh.\n' +
+        '- Navegação geral na internet por 4 horas: 1,2 kWh.\n\n' +
+        'Total estimado diário: 3,5 kWh.\n\n' +
+        'Reduza o consumo fechando abas e desligando aparelhos quando não usar!'
+      );
+    });
+  </script>
+</body>
+</html>

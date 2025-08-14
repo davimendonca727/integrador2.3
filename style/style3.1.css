@@ -1,0 +1,182 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f4ec;
+    color: #000000;
+    line-height: 1.6;
+    padding: 0 20px;
+  }
+  
+  header {
+    background-color: #eeffef;
+    color: #00922c;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    font-style: italic;
+  }
+  
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  section h2 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+  
+  section p, section ul {
+    font-size: 1em;
+    color: #333;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 8px;
+  }
+  
+  strong {
+    color: #00695c;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #c8e6c9;
+    color: #1b5e20;
+    font-size: 0.9em;
+    margin-top: 40px;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5em;
+    }
+  
+    header p {
+      font-size: 1em;
+    }
+  
+    main {
+      padding: 20px;
+    }
+  
+    section h2 {
+      font-size: 1.3em;
+    }
+  }
+
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* proporção 16:9 */
+    overflow: hidden;
+  }
+  
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche o container mantendo proporção */
+  }
+  
+  header {
+    background: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Container centralizado igual à imagem */
+  .header-container {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Logo */
+  .logo {
+    height: 200px;
+    width: auto;
+  }
+  
+  /* Nav padrão em telas grandes */
+  .nav-menu {
+    background-color: rgb(0, 122, 20);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  .nav-menu a {
+    margin: 5px 10px;
+    text-decoration: none;
+    color: #e4ffe6;
+    font-weight: bold;
+    transition: transform 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    transform: translateY(-4px);
+  }
+  .imagem-responsiva {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .video-responsivo {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;         /* opcional */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* opcional */
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin: 0;
+  }

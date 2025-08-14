@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tecnologia e Meio Ambiente: suas relações e avanços</title>
+
+  <link rel="icon" href="favicons/tecnologiaambiental.png" type="image/x-icon">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7faff;
+      color: #1b27aaad;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #ffffffe7;
+      color: #000000;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 0 0 10px 10px;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+     
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-style: italic;
+    }
+
+    h1 {
+  font-size: 3em;
+  margin: 0;
+}
+    main {
+      max-width: 900px;
+      margin: 30px auto 60px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(57, 73, 171, 0.3);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      color: #3949ab;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    section p, section ul {
+      font-size: 1em;
+      color: #212121;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: #283593;
+    }
+
+    /* Botão de simulação */
+    #simularConsumoBtn {
+      display: inline-block;
+      background-color: #283593;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+      user-select: none;
+    }
+
+    #simularConsumoBtn:hover {
+      background-color: #1a237e;
+    }
+
+    /* Área do gráfico */
+    #graficoConsumo {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #3949ab;
+      border-radius: 8px;
+      background-color: #e8eaf6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #c5cae9;
+      color: #1a237e;
+      font-size: 0.9em;
+      margin-top: 40px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section h2 {
+        font-size: 1.3em;
+      }
+
+      #simularConsumoBtn {
+        width: 100%;
+      }
+    }
+
+   
+
+
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* proporção 16:9 */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Preenche o container mantendo proporção */
+}
+
+header {
+  background: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Container centralizado igual à imagem */
+.header-container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo */
+.logo {
+  height: 200px;
+  width: auto;
+}
+
+/* Nav padrão em telas grandes */
+.nav-menu {
+  background-color: rgba(0, 66, 141, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.nav-menu a {
+  margin: 5px 10px;
+  text-decoration: none;
+  color: #e4ffe6;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.nav-menu a:hover {
+  transform: translateY(-4px);
+}
+.imagem-responsiva {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-responsivo {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;         /* opcional */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* opcional */
+}
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="img/pad.png" alt="Logo do site" class="logo">
+      <nav class="nav-menu">
+        <a href="index.html">Preservação</a>
+        <a href="tecnologiaambiental.html">Tecnologia</a>
+        <a href="impactosanbientais.html">Impactos</a>
+        <a href="papel.html">Consumo de Papel</a>
+        <a href="consumo.html">Energia Digital</a>
+        <a href="descarte.html">Descarte Eletrônico</a>
+        <a href="educação.html">Educação Ambiental</a>
+      </nav>
+    </div>
+  </header>
+
+  <img src="TECNOLOGIA E/tecnologiaemeioambienet.png" alt="Banner Preservação Ambiental Digital" class="imagem-responsiva">
+  
+  <center>
+    <h1>Tecnologia e Meio Ambiente: suas relações e avanços</h1>
+    <h4>Inovações tecnológicas a favor da preservação ambiental</h4>
+  </center>
+
+  <main>
+    <section>
+
+
+    <h2> Entendendo a Relação entre Tecnologia e Meio Ambiente</h2>
+      <p>A tecnologia tem se mostrado uma aliada essencial na luta pela preservação ambiental. Ela permite monitorar de forma precisa as mudanças nos ecossistemas, prevenir desastres
+ naturais, otimizar o uso de recursos e criar soluções inovadoras para os desafios ambientais. Por meio do desenvolvimento de ferramentas digitais e automação, é possível reduzir
+  significativamente os impactos ambientais, promovendo práticas sustentáveis em escala global.</p>
+</section>
+<br><br><br>
+
+<center>
+  <img src="img/tecnologiaeambiente.jpg" alt="Imagem Demonstrativa" class="imagem-responsiva">
+</center>
+<br><br><br>
+
+<section>
+<h2>Principais Avanços Tecnológicos Ambientais</h2>
+<p>Entre os principais avanços, destacam-se os sensores ambientais, capazes de medir com precisão a qualidade do ar, da água e do solo, oferecendo dados em tempo real. Os drones, por 
+sua vez, são usados para fiscalização de áreas de preservação e controle de desmatamento. As fontes de energia renovável, como a solar e a eólica, estão transformando a matriz 
+energética mundial. Sistemas de coleta seletiva automatizados estão facilitando a reciclagem em grandes centros urbanos, enquanto plataformas digitais estão educando milhões de 
+pessoas sobre práticas ecológicas e sustentabilidade.</p></section>
+
+<section>
+<h2>Impactos Positivos da Tecnologia no Meio Ambiente</h2>
+<p>
+Com o uso adequado da tecnologia, a gestão dos recursos naturais torna-se mais inteligente e eficiente. É possível prever escassez hídrica, evitar o desperdício de energia e 
+controlar emissões de poluentes. Além disso, tecnologias como a inteligência artificial e o big data contribuem para a transparência na execução de políticas públicas ambientais, 
+ajudando a proteger a biodiversidade e enfrentando os efeitos das mudanças climáticas com ações mais precisas e coordenadas.</p></section>
+<br><br><br>
+
+
+<img src="img/impactospositivos.jpg" alt="Imagem Demonstrativa" class="imagem-responsiva"><br><br><br>
+<section>
+<h2>Desafios e Cuidados Necessários</h2>
+<p>
+Apesar de tantos benefícios, a expansão tecnológica também traz preocupações ambientais. O aumento da produção de equipamentos eletrônicos gera resíduos perigosos que, se descartados
+ de forma incorreta, poluem o solo e os lençóis freáticos. O consumo de energia por grandes servidores e data centers também é elevado. Por isso, é fundamental investir em tecnologia 
+ verde, com reaproveitamento de materiais, programas de reciclagem e uso de energia limpa em centros de processamento de dados.</p></section>
+
+ <section>
+  <h2>Exemplos Práticos e Aplicações</h2>
+  <ul>
+    <li>Uso de sensores IoT para monitorar a qualidade do ar e da água.</li>
+    <li>Drones para mapear áreas desmatadas e identificar focos de incêndio.</li>
+    <li>Sistemas inteligentes para otimizar o uso de água na agricultura.</li>
+    <li>Aplicativos que incentivam a reciclagem e o consumo consciente.</li>
+  </ul>
+</section><br><br><br>
+
+<section>
+<h2>O Papel da Sociedade e da Educação</h2>
+<p>
+A tecnologia, quando usada em conjunto com a educação ambiental, tem o poder de transformar a forma como vivemos e nos relacionamos com o planeta. Através de plataformas digitais,
+ redes sociais e conteúdos interativos, é possível disseminar conhecimento, despertar a consciência ecológica e promover o engajamento da população. A sociedade desempenha papel 
+ fundamental ao exigir responsabilidade ambiental de empresas e governos, além de adotar atitudes mais sustentáveis no dia a dia.</p>
+</section>
+ <img src="img/sensores.webp" alt="Imagem Demonstrativa" class="imagem-responsiva"><br><br><br>
+
+<section>
+<h2>Conclusão</h2>
+<p>
+A união entre tecnologia e meio ambiente representa um caminho promissor para o futuro. Quando utilizada com ética e responsabilidade, a inovação tecnológica pode mitigar os danos
+ ambientais, restaurar ecossistemas degradados e garantir qualidade de vida para todos. A construção de um futuro sustentável depende do esforço conjunto entre governos, empresas,
+  comunidades e indivíduos conscientes do poder transformador da tecnologia.</p>
+
+
+
+</section>
+<br><br><br>
+
+    
+
+    <section>
+      <h2>Conheça Alguns Avanços Tecnológicos</h2>
+      <p>Clique no botão para ver uma breve simulação dos impactos positivos das tecnologias ambientais.</p>
+      <button id="simularConsumoBtn">Simular Avanços Tecnológicos</button>
+      <svg id="graficoConsumo" width="100%" height="250" viewBox="0 0 600 250" aria-label="Gráfico dos avanços tecnológicos ambientais" role="img" >
+        <!-- Fundo do gráfico -->
+        <rect x="50" y="20" width="500" height="200" fill="#c5cae9" />
+        
+        <!-- Barras -->
+        <rect x="90" y="120" width="60" height="100" fill="#3949ab" />
+        <rect x="190" y="140" width="60" height="80" fill="#5c6bc0" />
+        <rect x="290" y="80" width="60" height="140" fill="#7986cb" />
+        <rect x="390" y="110" width="60" height="110" fill="#9fa8da" />
+        <rect x="490" y="160" width="60" height="60" fill="#657ecfcc" />
+        
+        <!-- Labels -->
+        <text x="120" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Sensores IoT</text>
+        <text x="220" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Drones</text>
+        <text x="320" y="230" font-size="14" fill="#1a237e" text-anchor="middle">Energias Renova..</text>
+        <text x="420" y="230" font-size="14" fill="#1a237e" text-anchor="middle">AGRCT. INTL.</text>
+        <text x="520" y="230" font-size="14" fill="#1a237e" text-anchor="middle">APP SUSTEN.</text>
+      </svg>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Tecnologia e Meio Ambiente | Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    document.getElementById('simularConsumoBtn').addEventListener('click', function() {
+      alert(
+        'Avanços Tecnológicos:\n\n' +
+        '- Sensores IoT melhoram o monitoramento ambiental em tempo real.\n' +
+        '- Drones facilitam a fiscalização e prevenção de desmatamentos.\n' +
+        '- Energias renováveis substituem fontes poluentes e reduzem emissões.\n' +
+        '- Agricultura inteligente otimiza o uso de recursos naturais.\n' +
+        '- Aplicativos promovem educação e ações sustentáveis na sociedade.\n\n' +
+        'A tecnologia, aliada à consciência, transforma o futuro do meio ambiente!'
+      );
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animação de Finalização</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    /* Tela de finalização */
+    #finalizacao {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 1s ease;
+        z-index: 9999;
+    }
+
+    #finalizacao.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+</style>
+</head>
+<body>
+
+<h1>Finalizando com dedicação! </h1>
+<p>Obrigado pela atenção e carinho de todos até aqui.</p>
+
+<button onclick="finalizarSite()">Finalizar</button>
+
+<!-- Tela de finalização -->
+<div id="finalizacao">Obrigado pela atenção! 👋</div>
+
+<script>
+function finalizarSite() {
+    let finalizacao = document.getElementById("finalizacao");
+    finalizacao.classList.add("show");
+
+    // Espera 2 segundos e redireciona ou fecha
+    setTimeout(() => {
+        // Aqui você pode redirecionar para outra página:
+        // window.location.href = "outra-pagina.html";
+        
+        // Ou apenas ocultar o conteúdo:
+        document.body.innerHTML = "<h1 style='color:white;text-align:center;margin-top:50px;'>Site finalizado!</h1>";
+        document.body.style.background = "black";
+    }, 2000);
+}
+</script>
+
+</body>
+</html>
